@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+    <form style="text-align: left;" method="POST" action="{% url 'edit' title %}" autocomplete="off">
+    {% csrf_token %}
+    <div style="margin: 10px; "><input type="text" name="title" value={{title}} disabled></div>
+    <div style="margin: 10px; ">
+    <textarea name="content" style="padding: 8px;" rows="4" cols="50">{{content}}</textarea></div>
+    <input style="margin-left: 8px;" type="submit" value="Save changes">
+    
+    </form>
+{% endblock %}

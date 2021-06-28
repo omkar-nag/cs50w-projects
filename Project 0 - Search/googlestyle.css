@@ -1,0 +1,99 @@
+body {
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0px;
+    padding-bottom: 0px;
+}
+a {
+    text-decoration: none;
+    }    
+nav {
+    text-align: right;
+    text-decoration: none; 
+    margin: 10px;
+    padding-bottom: 98px;      
+    }
+.top {
+    margin: 8px;
+    font-size: 13px;
+    color: black;
+}
+#signin {
+    background-color: #0099cc;
+    color: white;
+    border-radius: 3px;
+    border: none;
+    height: 25px;
+}
+#signin:hover {
+    outline-width: 2px;
+    background-color: #35bdeb;
+    text-decoration: none;
+    border: darkgrey;
+}
+#signin:focus {
+    outline:none;
+}
+.top:hover {
+    text-decoration: underline;
+}
+.xyz {
+    border-style: solid;
+    border-color: rgb(219, 217, 217);
+    border-width: 1px;
+}
+input:focus{
+    outline: none; 
+    box-shadow: 0 0 3px 1px rgb(214, 211, 211);
+}
+#search {
+    background-color: rgb(241, 238, 238);
+    color: rgb(112, 112, 112);
+    border: none;
+    width: 150;
+    padding: 10px;
+    margin: 10px;
+}
+#logo {
+    padding-bottom: 25px;
+}
+footer {
+    padding-top: 13px;
+    padding-bottom: 0px;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(235, 233, 233);
+    position: fixed;
+    bottom: 0px;
+}
+footer ul {
+    float: left;
+    font-size: 14px;
+    color: rgb(145, 143, 143);
+}
+ul{
+    padding: 10px;
+}
+footer ul li {
+    display: inline;
+    margin: 10px;
+
+}
+.footerleft {
+    text-align: center;
+    margin: auto;
+}
+.footerright {
+    float: right;
+    margin: auto;
+    text-align: center;
+    padding-right: 20px;
+}
+#lucky {
+    background-color: rgb(241, 238, 238);
+    color: rgb(112, 112, 112);
+    border: none;
+    width: 150;
+    padding: 10px;
+    margin: 10px;
+}

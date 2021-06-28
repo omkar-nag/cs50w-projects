@@ -1,0 +1,30 @@
+{% extends "auctions/layout.html" %}
+{% block body %}
+
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+    {% if approve %}
+    <div id="create" style="margin-left: 40px;">
+        <form  method="POST" autocomplete="off">
+            {% csrf_token %}
+            <label for="title">Title</label><br>
+            <input type="text" name="title" required/><br>
+            <label for="Description">Description</label><br>
+            <input type="text" name="description" required/><br>
+            <label for="category" class="my-1 mr-2">Category</label><br>
+            <select name="category" class="custom-select my-1 mr-sm-2" style="width: 500px;">
+                {% for option in cat %}
+                    <option>{{option.cat}}</option>
+                {% endfor %}
+            </select><br>
+            <label for="baseprice">Reserve price</label><br>
+            <input type="number" name="baseprice" required/><br>
+            <label for="image">Image URL(Optional)</label><br>
+            <input type="text" name="image"/><br><br>
+            <input class="btn btn-primary btn-sm" type="submit" value="Submit"/><br>
+            
+        </form>
+    </div>
+    {% endif %}
+{% endblock %}

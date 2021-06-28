@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+<div style="margin: 3ch;">
+    <h1>Whoops!<br></h1>
+    {% if message %}
+    <p>{{message}}</p>
+    {% else %}
+    <p>Page not found..</p>
+    {% endif %}
+</div>
+{% endblock %}

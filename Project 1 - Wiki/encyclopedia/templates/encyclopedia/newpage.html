@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    
+    <form style="text-align: left" method="POST" action="{% url 'newpage' %}" autocomplete="off">
+    {% csrf_token %}
+    <div style="margin: 10px; "><input type="text" name="title" placeholder="Title"></div>
+    <div style="margin: 10px; ">
+    <textarea name="content" style="height:300px; padding: 1ch;" placeholder="Describe here!"></textarea></div>
+    <input type="submit" style="margin-left: 9px;" value="Create">
+    </form>
+
+{% endblock %}

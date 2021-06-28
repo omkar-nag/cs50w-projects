@@ -1,0 +1,9 @@
+textarea {
+    min-height: 400px;
+}
+.list {
+    border: black;
+}
+body {
+    background-color:#f2eeee;
+}

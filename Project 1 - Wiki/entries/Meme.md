@@ -1,0 +1,2 @@
+#Meme
+It is an element of a culture or system of behaviour passed from one individual to another by imitation or other non-genetic means.

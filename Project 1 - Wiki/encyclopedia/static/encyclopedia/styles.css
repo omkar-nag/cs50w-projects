@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    background-color: white;
+    overflow-x: hidden;
+}
+a:hover {
+    text-decoration: none;
+}
+a:focus {
+    outline: 0;
+}
+code {
+    white-space: pre;
+}
+
+h1 {
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+textarea {
+    height: 90vh;
+    width: 80%;
+}
+
+.main {
+    padding: 10px;
+}
+
+.search {
+    width: 100%;
+    font-size: 15px;
+    line-height: 15px;
+    border: solid;
+    border-width: 1px;
+    padding: 1ch;
+    border-radius: 10px;
+    border-color: rgb(170, 170, 170);
+}
+.search:focus {
+    outline: none; 
+    box-shadow: 0 0 5px 1px rgb(214, 211, 211);
+}
+.search:hover {
+    border-color: rgb(0, 85, 243);
+}
+.sidebar {
+    background-color: #f0f0f0;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 5px;
+}

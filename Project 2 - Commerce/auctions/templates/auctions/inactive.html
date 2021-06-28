@@ -1,0 +1,24 @@
+{% extends "auctions/layout.html" %}
+{% block body %}
+    <h2>Inactive Listings</h2>
+    {% for listing in listings %}
+        {% if not listing.isactive %}
+        <ul>
+            <div class="list" >
+                <div style=" padding: 10px;">
+                <li style="list-style: none; height: 200px;">
+                    <img style="float: left;" src="{{ listing.image }}" width="200px" alt="Img not found" >
+                    <div style="margin-left:400px ;"><br>
+                    <p><a href="item/{{listing.id}}">{{ listing.title }}</a></p>
+                    <p>{{ listing.description }}</p>
+                    <p>Category : <a href="{% url 'category' listing.category %}">{{listing.category }}</a></p>
+                    <p>Reserve : <b>${{ listing.baseprice }}</b></p>
+                    
+                    </div>
+                </li>
+                </div>
+            </div>
+        </ul>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

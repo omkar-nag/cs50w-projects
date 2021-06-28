@@ -1,0 +1,46 @@
+{% extends "auctions/layout.html" %}
+{% block body %}
+    {% if message %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
+    <h1>{{ item.title }}</h1>
+    <a type="button" class="btn btn-primary btn-sm" href="{% url 'watch' item.id %}">Watchlist</a>
+    <img style="display: block; margin: 0 auto; padding: 10ch;" src="{{ item.image }}" width="400px" alt="Img not found" >
+    <div>{{ item.description }}</div>
+    <p style="color: rgb(110, 110, 110); float: right;">Listed by : <strong>{{ item.user }}</strong></p>
+    <h5 >Current bid : <strong>${{ bid }}</strong>  </h5>
+    {% if item.isactive %}
+        {% if not request.user  == item.user %}
+        <form action="{% url 'bid' item.id %}" method="POST">
+            {% csrf_token %}
+            <input type="number" name="bid" value="" />
+            <button class="btn btn-primary btn-sm" type="submit">Bid</button>
+        </form>
+        {% else %}
+        <a type="button" class="btn btn-primary btn-sm" href="{% url 'end' item.id %}" >End Auction</a><br>
+        {% endif %}
+    {% else %}
+    <br>
+    <p>-------THE AUCTION FOR THIS LISTING HAS ENDED-------<br>
+    <h2  style="text-align: center;">SOLD TO {{ item.bidder_id }}</h2> </p>
+    {% endif %}
+    <br>
+    <div>
+        {% if comments %}
+        <h3 style="color: rgb(136, 133, 133);">Comments</h4>
+        {% for comment in comments %}
+        <p style="color: rgb(29, 29, 29);">{{comment}}</p>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <form action="{% url 'comment' item.id %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="comment" placeholder="Write a comment" />
+            <button class="btn btn-primary btn-sm" type="submit">SUBMIT</button>
+    </form>
+{% endblock %}

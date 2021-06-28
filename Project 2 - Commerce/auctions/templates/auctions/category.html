@@ -1,0 +1,17 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h5>Items of the category <strong>'{{category.cat}}'</strong></h5>
+    {% for item in items %}
+        <ul>
+            <div style="margin-bottom: 20ch;">
+                <li style="list-style: none;">
+                    <img style="float: left;" src="{{ item.image }}" width="200px" alt="Img not found" >
+                    <div style="margin-left:400px ;"><a href="{% url 'items' item.id %}">{{ item.title }}</a><br>
+                    {{ item.description }}<br>
+                    Reserve price = <b>${{ item.baseprice }}.00</b></div>
+                </li>
+            </div>
+        </ul>
+    {% endfor %}
+{% endblock %}

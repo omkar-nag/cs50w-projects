@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Search results:</h1>
+    <h6 style="color: rgb(167, 167, 167);margin-left: 3ch;">displaying results for "{{query}}"</h6>
+
+    <ul>
+        <br>
+        {% for entry in results%}
+            <li><a href="wiki/{{entry}}">{{ entry }}</a></li>
+        {% empty %}
+        <p>Empty!<br> Your query doesn't seem to match any entry</p>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

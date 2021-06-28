@@ -1,0 +1,162 @@
+html {
+  background-image: url("./bg1.svg");
+  --scrollbarBG:#e6c49f ;
+  --thumbBG: #601e51;
+  /* background-color:#1F2833; */
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; 
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: #e6c49f;
+}
+.wrap { 
+  white-space: pre-wrap;      /* CSS3 */   
+  white-space: -moz-pre-wrap; /* Firefox */    
+  white-space: -pre-wrap;     /* Opera <7 */   
+  white-space: -o-pre-wrap;   /* Opera 7 */    
+  word-wrap: break-word;      /* IE */
+}
+#root {
+  height: 100%;
+}
+#content {
+   height:100%
+ }
+::-webkit-scrollbar-thumb {
+  width: 3px;
+  background: #601e51;
+}
+
+::-webkit-scrollbar-corner {
+  background: #601e51;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  margin: 0;
+  font-family:'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #e6c49f;
+}
+hr {
+  height:2px;
+  border:none;
+  background-color:#e6c49f
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#merged-content {
+  width: 100%;
+}
+
+
+#blocks {
+  margin: 5ch;
+  padding:16px;
+  display: inline-block ;
+  width:300px;
+  height: 178px; 
+  background-image: linear-gradient(to right, #e6c49f 10%, #ff99cc 100%);
+  color:#102844;
+  box-shadow: 0px 0px 10px 3px #0B0C10;
+}
+#blocks:hover {
+  cursor: pointer;
+  box-shadow:0px 0px 10px 3px #c901a1;
+
+}
+#right {
+  position: fixed;
+  /* background-color:#1F2833; */
+  margin-left: 20%;
+  padding: 1px 16px;
+  height: 100%;
+  width: 80%;
+  overflow: auto;
+  box-shadow: inset  15px 0px 15px -5px rgba(0,0,0,0.7);
+}
+#left {
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  background-image: linear-gradient(to left,#70145b 1%, #292127 100%);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  --scrollbarBG:#dadada ;
+  --thumbBG: #30475e;
+}
+
+#left a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1000px) {
+  #left {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-image: linear-gradient(to bottom,#1F2833 ,#c901a1 );
+  }
+  #left a {float: left;}
+  #blocks {
+    margin-left: 0;
+    margin-right: 60px;
+    padding-left: -20;
+  }
+  .content {
+    margin-left: -20px;
+  }
+  #assignment-window {
+    margin-right: 70px;
+  }
+  #right{
+    margin-left: 0;
+    height: 100%;
+    box-sizing: border-box; 
+    margin-top: auto;
+    position: relative;
+    overflow: inherit;
+    width: 100%;
+    box-shadow: inset  0px 0px 0px 0px rgba(0,0,0,0.7);
+
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #left a {
+    text-align: center;
+    float: none;  }
+  #blocks {
+    margin-left: 0;
+    padding-left: -20;
+    width: 80%;
+    height: 80%;
+  }
+  #classroomname-homepage {
+    font-size: 20px;
+  }
+  #right {
+    width: 100%;
+
+  }
+}

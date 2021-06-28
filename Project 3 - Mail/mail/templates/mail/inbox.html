@@ -1,0 +1,49 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div style="margin-top: 2ch;">
+    <h2 style="text-align: center;">MAIL</h2>
+    <h6 style="display: inline-block;">Welcome, </h6>
+    <h4 style="display: inline-block; ">{{ request.user.email }}</h4>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+    <button class="btn btn-secondary" id="inbox">Inbox</button>
+    <button class="btn btn-secondary" id="compose">Compose</button>
+    <button class="btn btn-secondary" id="sent">Sent</button>
+    <button class="btn btn-secondary" id="archived">Archived</button>
+    <a class="btn btn-secondary" href="{% url 'logout' %}">Log Out</a>
+    </nav>
+    <hr>
+
+    <div id="emails-view">
+    </div>
+
+    <div id="compose-view">
+        <h3>New Email</h3>
+        <form id="compose-form">
+            <div class="form-group">
+                From: <input disabled class="form-control" value="{{ request.user.email }}">
+            </div>
+            <div class="form-group">
+                To: <input id="compose-recipients" class="form-control">
+            </div>
+            <div class="form-group">
+                Subject: <input class="form-control" id="compose-subject" placeholder="Subject">
+            </div>
+            <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+            <br>
+            <input type="submit" class="btn btn-secondary"/>
+        </form>
+    </div>
+
+    <div id="load-mail">
+        <input id="archive" type="submit" value="Archive">
+    </div>
+
+   
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'mail/inbox.js' %}"></script>
+{% endblock %}

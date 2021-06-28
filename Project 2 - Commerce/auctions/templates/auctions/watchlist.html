@@ -1,0 +1,18 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% for listing in listings %}
+        <ul>
+            <div class="list" style="margin-bottom: 20ch;">
+                <li style="list-style: none; height: 200px;">
+                    <img style="float: left;" src="{{ listing.image }}" width="200px" alt="Img not found" >
+                    <div style="margin-left:400px ;"><br>
+                    <a href="item/{{listing.id}}">{{ listing.title }}</a><br>
+                    {{ listing.description }}<br>
+                    Reserve price = <b>${{ listing.baseprice }}.00</b></div><br>
+                    <a type="button" style="margin-left: 280px;"  class="btn btn-primary btn-sm" href="{% url 'watch' listing.id %}">Remove from Watchlist</a>
+                </li>
+            </div>
+        </ul>
+    {% endfor %}
+{% endblock %}
